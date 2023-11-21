@@ -43,12 +43,20 @@
       "rules": {
           "max-classes-per-file": "off"
       }
-  },
+    },
     {
         "files": ["src/util/helper/log.ts"],
         "rules": {
             "no-console": "off"
         }
+    },
+    {
+      "files": [
+        "**/*.test.ts"
+      ],
+      "env": {
+        "jest": true
+      }
     }
   ],
   "rules": {
