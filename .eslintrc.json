@@ -1,0 +1,96 @@
+{
+  "env": {
+      "browser": true,
+      "es2021": true,
+      "node": true,
+      "mocha": true
+  },
+  "extends": [
+      "airbnb"
+  ],
+  "parser": "@typescript-eslint/parser",
+  "parserOptions": {
+      "ecmaFeatures": {
+          "jsx": true
+      },
+      "ecmaVersion": 12,
+      "sourceType": "module"
+  },
+  "plugins": [
+      "@typescript-eslint"
+  ],
+  "settings": {
+      "import/resolver": {
+        "node": {
+          "extensions": [".js", ".jsx", ".ts", ".tsx"]
+        }
+      }
+    },
+  "overrides": [
+    {
+        "files": ["*.spec.ts"],
+        "rules": {
+            "no-undef": 0,
+            "jest/valid-expect": 0,
+            "max-lines": "off",
+            "func-names": "off",
+            "prefer-arrow-callback": "off",
+            "no-empty-function": "off"
+        }
+    },
+    {
+      "files": ["*.entity.ts", "*.dto.ts"],
+      "rules": {
+          "max-classes-per-file": "off"
+      }
+  },
+    {
+        "files": ["src/util/helper/log.ts"],
+        "rules": {
+            "no-console": "off"
+        }
+    }
+  ],
+  "rules": {
+      "import/extensions": [
+         "error",
+         "ignorePackages",
+         {
+           "js": "never",
+           "jsx": "never",
+           "ts": "never",
+           "tsx": "never"
+         }
+      ],
+      "prefer-destructuring": 0,
+      "indent": ["error", 2, {"SwitchCase": 1}],
+      "no-shadow": "off",
+      "@typescript-eslint/no-shadow": "error",
+      "no-unused-vars": "off",
+      "lines-between-class-members": [
+        "error",
+        "always",
+        { "exceptAfterSingleLine": true }
+      ],
+      "object-shorthand": "off",
+      "padded-blocks": ["error", "always"],
+      "no-underscore-dangle": "off",
+      "import/prefer-default-export": "off",
+      "no-restricted-syntax": "off",
+      "no-return-assign": "off",
+      "func-names": "off",
+      "no-continue": "off",
+      "max-len" : ["error", {"code": 196}],
+      "class-methods-use-this": "off",
+      "no-useless-constructor": 0,
+      "no-empty-function": 0,
+      "import/no-unresolved": [
+        "error",
+        {
+            "ignore": [
+                "aws-lambda"
+            ]
+        }
+      ]
+    }
+}
